@@ -1,5 +1,5 @@
 '''
-Code for Singly Linked List
+Python code for Singly Linked List.
 '''
 
 # Class for Node
