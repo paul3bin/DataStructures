@@ -1,3 +1,8 @@
+'''
+Python code for binary tree traversal.
+'''
+
+
 class Node:
     def __init__(self,key):
         self.left = None
