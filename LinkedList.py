@@ -18,6 +18,7 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
+    # Function that adds a new node to the linked list.
     def insert(self,data):
         newNode = Node(data)
         if self.head is None:
@@ -29,6 +30,7 @@ class LinkedList:
                 lastNode = lastNode.next
             lastNode.next = newNode
 
+    # funcion for removing a node from the linked list
     def delete(self):
         temp = self.head
         if temp is None:
@@ -52,26 +54,31 @@ class LinkedList:
                 prev.next = temp.next
                 temp = None
 
+    # function for displaying the contents of a linked list.
     def printLinkedList(self):
         temp = self.head
         while(temp is not None):
             print(temp.data)
             temp = temp.next
 
-response = 'y'
-LLobject = LinkedList()
 
-while response=='y':
-    print('\n----------------------Linked List----------------------')
-    print('\n1. Insert\n2. Delete value\n3. Print linked list')
-    choice = int(input('Enter your choice...'))
-    if choice==1:
-        data = int(input('Enter data(integer)....'))
-        LLobject.insert(data)
-    elif choice==2:
-        LLobject.delete()
-    elif choice==3:
-        print(LLobject.printLinkedList())
-    else:
-        print('Not a valid option. Try again.')
-    response = input('Want to continue? (y/n)....')
+# driver code
+if __name__ == '__main__':
+        
+    response = 'y'
+    LLobject = LinkedList()
+
+    while response=='y':
+        print('\n----------------------Linked List----------------------')
+        print('\n1. Insert\n2. Delete value\n3. Print linked list')
+        choice = int(input('Enter your choice...'))
+        if choice==1:
+            data = int(input('Enter data(integer)....'))
+            LLobject.insert(data)
+        elif choice==2:
+            LLobject.delete()
+        elif choice==3:
+            print(LLobject.printLinkedList())
+        else:
+            print('Not a valid option. Try again.')
+        response = input('Want to continue? (y/n)....')
