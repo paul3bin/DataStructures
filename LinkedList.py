@@ -1,5 +1,6 @@
 '''
-Python code for Singly Linked List.
+Code for sungly linked list using python.
+
 '''
 
 # Class for Node
