@@ -61,6 +61,22 @@ class LinkedList:
             print(temp.data)
             temp = temp.next
 
+# inserting a new node at a given position
+
+# temp = head
+#     if head is None:
+#         newNode.next = head
+#         head = newNode
+#         return head
+#     else:
+#         i=0
+#         while(i<position-1):
+#             temp = temp.next
+#             i+=1
+
+#         newNode.next = temp.next
+#         temp.next = newNode
+#         return head
 
 # driver code
 if __name__ == '__main__':
