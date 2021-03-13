@@ -4,10 +4,11 @@ Python code for binary tree traversal.
 
 
 class Node:
-    def __init__(self,key):
+    def __init__(self, key):
         self.left = None
         self.right = None
         self.val = key
+
 
 def printInorder(root):
     if root:
@@ -15,11 +16,13 @@ def printInorder(root):
         print(root.val)
         printInorder(root.right)
 
+
 def printPostorder(root):
     if root:
         printPostorder(root.left)
         printPostorder(root.right)
         print(root.val)
+
 
 def printPreorder(root):
     if root:
@@ -27,7 +30,8 @@ def printPreorder(root):
         printPreorder(root.left)
         printPreorder(root.right)
 
-#root node
+
+# root node
 root = Node(1)
 root.left = Node(2)
 root.right = Node(3)
