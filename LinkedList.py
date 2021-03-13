@@ -4,22 +4,26 @@ Code for sungly linked list using python.
 '''
 
 # Class for Node
+
+
 class Node:
 
     # Initialization function
-    def __init__(self,data):
+    def __init__(self, data):
         self.data = data
         self.next = None
 
 # Class for Linked List
+
+
 class LinkedList:
 
-    #Initialization function
+    # Initialization function
     def __init__(self):
         self.head = None
 
     # Function that adds a new node to the linked list.
-    def insert(self,data):
+    def insert(self, data):
         newNode = Node(data)
         if self.head is None:
             self.head = newNode
@@ -43,7 +47,7 @@ class LinkedList:
                 return
             else:
                 while temp is not None:
-                    if temp.data==value:
+                    if temp.data == value:
                         break
                     prev = temp
                     temp = temp.next
@@ -57,27 +61,47 @@ class LinkedList:
     # function for displaying the contents of a linked list.
     def printLinkedList(self):
         temp = self.head
+        llist = []
         while(temp is not None):
-            print(temp.data)
+            llist.append(str(temp.data))
             temp = temp.next
+        print('->'.join(llist))
+
+    def reverse_linked_list(self):
+        curr = self.head  # a
+        prev = None
+        # a->b->c->d->None
+        while True:
+            if curr.next is not None:
+                nxt = curr.next  # b
+                curr.next = prev  # None<-a
+                prev = curr  # a
+                curr = nxt  # b
+            else:
+                break
+        curr.next = prev
+        self.head = curr
+
 
 # driver code
 if __name__ == '__main__':
-        
+
     response = 'y'
     LLobject = LinkedList()
 
-    while response=='y':
-        print('\n----------------------Linked List----------------------')
-        print('\n1. Insert\n2. Delete value\n3. Print linked list')
-        choice = int(input('Enter your choice...'))
-        if choice==1:
+    print('\n----------------------Linked List----------------------')
+    print('\n1. Insert\n2. Delete value\n3. Print linked list\n4. Reverse Linked List')
+    while response == 'y':
+        choice = int(input('Option...'))
+        if choice == 1:
             data = int(input('Enter data(integer)....'))
             LLobject.insert(data)
-        elif choice==2:
+        elif choice == 2:
             LLobject.delete()
-        elif choice==3:
+        elif choice == 3:
             print(LLobject.printLinkedList())
+        elif choice == 4:
+            LLobject.reverse_linked_list()
         else:
             print('Not a valid option. Try again.')
         response = input('Want to continue? (y/n)....')
