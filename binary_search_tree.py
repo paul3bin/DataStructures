@@ -65,25 +65,26 @@ def preorder(root):
         preorder(root.right)
 
 
-print('\n-----------------Binary Search Tree-----------------')
-val = int(input('Enter root value: '))
-root = Node(val)
-response = 'y'
-print('\n1. Insert\n2. Search\n3. Print In-Order\n4. Print Post-Order\n5. Print Pre-Order')
-while response == 'y':
-    option = int(input('\nOption...'))
-    if option not in list(range(1, 6)):
-        print('\nWrong option. Try again.')
-    else:
-        if option == 1:
-            value = int(input('Enter value: '))
-            insert(root, value)
-        elif option == 2:
-            print(search(root, int(input('Enter value to be searched: '))))
-        elif option == 3:
-            inorder(root)
-        elif option == 4:
-            postorder(root)
+if __name__ == '__main__':
+    print('\n-----------------Binary Search Tree-----------------')
+    val = int(input('Enter root value: '))
+    root = Node(val)
+    response = 'y'
+    print('\n1. Insert\n2. Search\n3. Print In-Order\n4. Print Post-Order\n5. Print Pre-Order')
+    while response == 'y':
+        option = int(input('\nOption...'))
+        if option not in list(range(1, 6)):
+            print('\nWrong option. Try again.')
         else:
-            preorder(root)
-    response = input('continue?(y/n): ')
+            if option == 1:
+                value = int(input('Enter value: '))
+                insert(root, value)
+            elif option == 2:
+                print(search(root, int(input('Enter value to be searched: '))))
+            elif option == 3:
+                inorder(root)
+            elif option == 4:
+                postorder(root)
+            else:
+                preorder(root)
+        response = input('continue?(y/n): ')
