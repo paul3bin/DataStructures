@@ -23,8 +23,8 @@ class LinkedList:
         self.head = None
 
     # Function that adds a new node to the linked list.
-    def insert(self, data):
-        newNode = Node(data)
+    def insert(self):
+        newNode = Node(input('Enter data: '))
         if self.head is None:
             self.head = newNode
             self.head.next = None
@@ -91,17 +91,12 @@ if __name__ == '__main__':
 
     print('\n----------------------Linked List----------------------')
     print('\n1. Insert\n2. Delete value\n3. Print linked list\n4. Reverse Linked List')
+    options = {1: LLobject.insert, 2: LLobject.delete,
+               3: LLobject.printLinkedList, 4: LLobject.reverse_linked_list}
     while response == 'y':
         choice = int(input('Option...'))
-        if choice == 1:
-            data = int(input('Enter data(integer)....'))
-            LLobject.insert(data)
-        elif choice == 2:
-            LLobject.delete()
-        elif choice == 3:
-            print(LLobject.printLinkedList())
-        elif choice == 4:
-            LLobject.reverse_linked_list()
-        else:
+        if choice not in range(1, 5):
             print('Not a valid option. Try again.')
+        else:
+            options[choice]()
         response = input('Want to continue? (y/n)....')
