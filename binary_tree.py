@@ -31,18 +31,19 @@ def printPreorder(root):
         printPreorder(root.right)
 
 
-# root node
-root = Node(1)
-root.left = Node(2)
-root.right = Node(3)
-root.left.left = Node(4)
-root.left.right = Node(5)
+if __name__ == '__main__':
+    # root node
+    root = Node(1)
+    root.left = Node(2)
+    root.right = Node(3)
+    root.left.left = Node(4)
+    root.left.right = Node(5)
 
-print('Preorder Traversal - ')
-printPreorder(root)
+    print('Preorder Traversal - ')
+    printPreorder(root)
 
-print('\n\nInorder Traversal - ')
-printInorder(root)
+    print('\n\nInorder Traversal - ')
+    printInorder(root)
 
-print('\n\nPostorder Traversal - ')
-printPostorder(root)
+    print('\n\nPostorder Traversal - ')
+    printPostorder(root)
