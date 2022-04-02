@@ -3,27 +3,34 @@ Code for sungly linked list using python.
 
 '''
 
-# Class for Node
-
 
 class Node:
-
-    # Initialization function
+    """
+    Class for a linked list node.
+    """
     def __init__(self, data):
+        """
+        Initialization function
+        """
         self.data = data
         self.next = None
 
-# Class for Linked List
-
 
 class LinkedList:
+    """
+    Class for a linked list
+    """
 
-    # Initialization function
     def __init__(self):
+        """
+        Initialization function
+        """
         self.head = None
 
-    # Function that adds a new node to the linked list.
     def insert(self):
+        """
+        function that adds a new node to the linked list.
+        """
         newNode = Node(input('Enter data: '))
         if self.head is None:
             self.head = newNode
@@ -34,11 +41,15 @@ class LinkedList:
                 lastNode = lastNode.next
             lastNode.next = newNode
 
-    # funcion for removing a node from the linked list
     def delete(self):
+        """
+        funcion for removing a node from the linked list
+        """
         temp = self.head
+        
         if temp is None:
             print('Cannot delete from an empty list.')
+        
         else:
             value = int(input('Enter the value to be removed: '))
             if temp.data == value:
@@ -58,8 +69,10 @@ class LinkedList:
                 prev.next = temp.next
                 temp = None
 
-    # function for displaying the contents of a linked list.
-    def printLinkedList(self):
+    def print_linked_list(self):
+        """
+        function for displaying the contents of a linked list.
+        """
         temp = self.head
         llist = []
         while(temp is not None):
@@ -83,7 +96,6 @@ class LinkedList:
         self.head = curr
 
 
-# driver code
 if __name__ == '__main__':
 
     response = 'y'
