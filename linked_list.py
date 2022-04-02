@@ -31,15 +31,15 @@ class LinkedList:
         """
         function that adds a new node to the linked list.
         """
-        newNode = Node(input('Enter data: '))
+        new_node = Node(input('Enter data: '))
         if self.head is None:
-            self.head = newNode
+            self.head = new_node
             self.head.next = None
         else:
-            lastNode = self.head
-            while(lastNode.next is not None):
-                lastNode = lastNode.next
-            lastNode.next = newNode
+            last_node = self.head
+            while(last_node.next is not None):
+                last_node = last_node.next
+            last_node.next = new_node
 
     def delete(self):
         """
