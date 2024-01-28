@@ -1,13 +1,14 @@
-'''
+"""
 Code for sungly linked list using python.
 
-'''
+"""
 
 
 class Node:
     """
     Class for a linked list node.
     """
+
     def __init__(self, data):
         """
         Initialization function
@@ -31,13 +32,13 @@ class LinkedList:
         """
         function that adds a new node to the linked list.
         """
-        new_node = Node(input('Enter data: '))
+        new_node = Node(input("Enter data: "))
         if self.head is None:
             self.head = new_node
             self.head.next = None
         else:
             last_node = self.head
-            while(last_node.next is not None):
+            while last_node.next is not None:
                 last_node = last_node.next
             last_node.next = new_node
 
@@ -46,12 +47,12 @@ class LinkedList:
         funcion for removing a node from the linked list
         """
         temp = self.head
-        
+
         if temp is None:
-            print('Cannot delete from an empty list.')
-        
+            print("Cannot delete from an empty list.")
+
         else:
-            value = int(input('Enter the value to be removed: '))
+            value = int(input("Enter the value to be removed: "))
             if temp.data == value:
                 self.head = temp.next
                 temp = None
@@ -64,7 +65,7 @@ class LinkedList:
                     temp = temp.next
 
                 if temp is None:
-                    print('Value not found!')
+                    print("Value not found!")
                     return
                 prev.next = temp.next
                 temp = None
@@ -75,10 +76,10 @@ class LinkedList:
         """
         temp = self.head
         llist = []
-        while(temp is not None):
+        while temp is not None:
             llist.append(str(temp.data))
             temp = temp.next
-        print('->'.join(llist))
+        print("->".join(llist))
 
     def reverse_linked_list(self):
         curr = self.head  # a
@@ -96,19 +97,23 @@ class LinkedList:
         self.head = curr
 
 
-if __name__ == '__main__':
-
-    response = 'y'
+if __name__ == "__main__":
+    response = "y"
     LLobject = LinkedList()
 
-    print('\n----------------------Linked List----------------------')
-    print('\n1. Insert\n2. Delete value\n3. Print linked list\n4. Reverse Linked List')
-    options = {1: LLobject.insert, 2: LLobject.delete,
-               3: LLobject.printLinkedList, 4: LLobject.reverse_linked_list}
-    while response == 'y':
-        choice = int(input('Option...'))
+    print("\n----------------------Linked List----------------------")
+    print("\n1. Insert\n2. Delete value\n3. Print linked list\n4. Reverse Linked List")
+    options = {
+        1: LLobject.insert,
+        2: LLobject.delete,
+        3: LLobject.print_linked_list,
+        4: LLobject.reverse_linked_list,
+    }
+
+    while response == "y":
+        choice = int(input("Option..."))
         if choice not in range(1, 5):
-            print('Not a valid option. Try again.')
+            print("Not a valid option. Try again.")
         else:
             options[choice]()
-        response = input('Want to continue? (y/n)....')
+        response = input("Want to continue? (y/n)....")
