@@ -10,6 +10,7 @@ class AdjNode:
         self.vertex = data
         self.next = None
 
+
 # A class to represent a graph
 # Size of the array will be number of vertices
 
@@ -17,7 +18,7 @@ class AdjNode:
 class Graph:
     def __init__(self, vertices):
         self.V = vertices
-        self.graph = [None]*self.V
+        self.graph = [None] * self.V
 
     def add_edge(self, src, dest):
         # adding node to the source node
@@ -25,8 +26,8 @@ class Graph:
         node.next = self.graph[src]
         self.graph[src] = node
 
-    # adding the source node to the destination as
-    # it is undirected graph
+        # adding the source node to the destination as
+        # it is undirected graph
         node = AdjNode(src)
         node.next = self.graph[dest]
         self.graph[dest] = node
@@ -34,16 +35,16 @@ class Graph:
     # method to print the graph
     def print_graph(self):
         for i in range(self.V):
-            print('Adjacency list of vertex {}\n head'.format(i), end='')
+            print("Adjacency list of vertex {}\n head".format(i), end="")
             temp = self.graph[i]
             while temp:
-                print(' -> {}'.format(temp.vertex), end='')
+                print(" -> {}".format(temp.vertex), end="")
                 temp = temp.next
-            print('\n')
+            print("\n")
 
 
 # driver code
-if __name__ == '__main__':
+if __name__ == "__main__":
     vertices = 5
     graph = Graph(vertices)
     graph.add_edge(0, 1)
